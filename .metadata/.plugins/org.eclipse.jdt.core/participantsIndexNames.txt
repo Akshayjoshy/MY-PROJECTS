@@ -1,0 +1,21 @@
+INDEX VERSION 1.131
+D:\SpringB\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\952025496.index
+\GroceryMarket\src\main\java
+D:\SpringB\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1075590095.index
+\GroceryMarket\src\main\java
+D:\SpringB\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3524257085.index
+\kochiProject\src\main\java
+D:\SpringB\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\506617899.index
+\Koottam\src\main\java
+D:\SpringB\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2046747671.index
+\Koottam\src\main\java
+D:\SpringB\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\999688959.index
+\luminar\src\main\java
+D:\SpringB\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2701286809.index
+\GroceryMarket\src\main\java
+D:\SpringB\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2012882092.index
+\kochiProject\src\main\java
+D:\SpringB\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2430392001.index
+\demo\src\main\java
+D:\SpringB\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2469732179.index
+\demo\src\main\java

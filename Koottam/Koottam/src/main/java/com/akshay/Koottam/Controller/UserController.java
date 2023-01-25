@@ -1,18 +1,17 @@
 package com.akshay.Koottam.Controller;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
+import java.util.Optional;
+
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-
 
 import com.akshay.Koottam.DAO.UserDAO;
 import com.akshay.Koottam.Model.UserEntity;
@@ -23,90 +22,75 @@ import com.akshay.Koottam.Model.UserEntity;
 public class UserController {
 	@Autowired
 	private UserDAO userDAO;
+	
+	@GetMapping("/home")
+	public String home(Model m) {	
+		
+		return "AdminHome";
+	}
+	
+	
 	@GetMapping("/user")
-	public String getAllUser(Model m) {
+	public String addUser(Model m) {
 		//List<UserEntity>ue=userDAO.findAll();
 		
 		return "AddUser";
 	}
-	@GetMapping(value="/getAllUserTypesAsJson", 
-			produces=MediaType.APPLICATION_JSON_VALUE)
-	@ResponseBody
-	public Map<String,String> getAllUserTypes() {
-		
-		Map<String,String> jsonResponse = new HashMap<String,String>();
-		
-		jsonResponse.put(UserEntity.USERTYPE_ADMIN,UserEntity.USERTYPE_ADMIN);
-		jsonResponse.put(UserEntity.USERTYPE_USER,UserEntity.USERTYPE_USER);
-		
-		return jsonResponse;
-	}
+	
 	
 	@GetMapping("/getAllUsers")
 	public String getAllUsers(Model model) {
 		
-		List<UserEntity> usersList = userDAO.findAll();
+		List<UserEntity> List = userDAO.findAll();
 		
-		model.addAttribute("usersList",usersList);
+		model.addAttribute("usersList",List);
 		
 		return "ViewAllUsers";
 	}
-	@GetMapping("/id")
-	public UserEntity getUserById(@PathVariable long id) {
+	@GetMapping("/edit_user/{id}")
+	public String editUser(@PathVariable(value="id")Long id,Model m) {
 		
-	
-		UserEntity user = userDAO.getReferenceById(id);
-		return user;
+		Optional<UserEntity> users =userDAO.findById(id);
+		UserEntity user=users.get();
+		m.addAttribute("users",user);
+		
+		return "editUser";
 	}
 	
 	@PostMapping("/saveUser")
-	public String updateUser(UserEntity user) {
+	public String updateUser(@ModelAttribute UserEntity user) {
 		
 		UserEntity user1 = userDAO.save(user);
 		if(user1.getId()!=null) {
 			//if succssfully saved
-			return "AdminHome";
+			return "AddUser";
 		}
 		else {
 			
 			return "Error";
 		}
+		
+	}
+	@PostMapping("/update_users")
+	public String save(@ModelAttribute UserEntity users,HttpSession session) {
+		
+		userDAO.save(users);
+		session.setAttribute("msg", "User Update Successfully...");
+		return "redirect:/getAllUsers";
 	}
 	
+	
+	@GetMapping("/delete/{id}")
+	public String deleteUser(@PathVariable(value="id") Long id,HttpSession session) {
+		
+		userDAO.deleteById(id);
+		session.setAttribute("msg", "User Delete Successfully...");
+		
+		return "redirect:/getAllUsers";
+		
+	}
+}
 	
 
 	
-		@GetMapping("/deleteUser/id")
-		public String deleteUser(@PathVariable long id) {
-			UserEntity user = userDAO.getReferenceById(id);
-			userDAO.delete(user);
-			return "AdminHome";
-		}
-		
-		/*
-		 * All UPDATE methods
-		 * *****************************
-		 */
-		@GetMapping("/editUser/id")
-		public String editUser(@PathVariable long id,Model model) {
-			UserEntity user = userDAO.getReferenceById(id);
-			model.addAttribute("user",user);
-			
-			String[] userTypes = new String [2];
-			userTypes[0]=UserEntity.USERTYPE_ADMIN;
-			userTypes[1]=UserEntity.USERTYPE_USER;
-			//userTypes[2]="hello";
-			model.addAttribute("userTypes",userTypes);
-			return "EditUser";
-		}
-		
-		@PostMapping("/updateUser")
-		public String updateUser1(UserEntity user) {
-			
-			userDAO.save(user);
-			return "AdminHome";
-		}
-		
-	
-	}
 

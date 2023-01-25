@@ -5,59 +5,90 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>ADD USER</title>
-<style>
-body{
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-  
-}
-		#reg{
-			border:2px solid black;
-			background:linear-gradient(135deg, #71b7e6, #9b59b6);
-			height:50%;
-			width:30%;
-		}
-		button {   
-       background-color: darkblue;   
-       width: 30%;  
-        color: silver;   
-        padding: 15px;   
-        margin: 10px 0px;   
-        border: none;   
-        cursor: pointer;   
-         }  
-          
-
-</style>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+	crossorigin="anonymous">
 </head>
-		<body>
-			<div id="reg">
+<body style="background-color: #f0f1f9;">
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background: linear-gradient(135deg, #71b7e6, #9b59b6);">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="#">ADD USER</a>
+			<button class="navbar-toggler" type="button"
+				data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<li class="nav-item"><a class="nav-link active"
+						aria-current="page" href="/home">HOME</a></li>
+					
+					<li class="nav-item"><a class="nav-link active"
+						aria-current="page" href="/getAllUsers">USER</a></li>
+				</ul>
+				<form class="d-flex">
+					<input class="form-control me-2" type="search" placeholder="Search"
+						aria-label="Search">
+					<button class="btn btn-outline-success" type="submit">Search</button>
+				</form>
+			</div>
+		</div>
+	</nav>
+
 	
-				<form method="post" action="/saveUser">
-	                      <center><h1>ADD USER</h1></center>
-	                    &emsp;<label for="username">Username</label>
-	                         <input type="text"  name="username" placeholder="Enter the username"><br><br>
-	                         
-	                         
-	                    &emsp;<label for="password">Password</label>
-	                        &nbsp;<input type="text" name="password" placeholder="Enter the password"><br><br>
-	                          
-	                       
-	                       
-	        &emsp;   <label>UserType</label>
-							<select name="usertype">
-										
-										<option>USER</option>
-										
-							</select><br><br>
-	                      
-	  				 &emsp; &emsp;	 <button type="submit">Add User</button>
-	                   
-	                 </form>
-	                    
-	            </div>   
-	   </body>
+	<div class="container p-4">
+		<div class="row">
+			<div>
+				<div class="col-md-8 offset-md-2">
+					<div class="card">
+						<div class="card-body">
+
+							<h4 class="text-center text-dark">Add Users</h4>
+							
+				<%--			<div th:if="${session.msg}">
+								<h5 class="text-center text-success" th:text="${session.msg}"></h5>
+								<th:block th:text="${#session.removeAttribute('msg')}"></th:block>
+							</div>--%>
+
+							<form action="/saveUser" method="post">
+								<div class="mb-3">
+									<label for="exampleInputEmail1" class="form-label">User
+										Name </label> <input type="text" class="form-control"
+										id="exampleInputEmail1" aria-describedby="emailHelp"
+										name="username">
+								</div>
+								<div class="mb-3">
+									<label for="exampleInputPassword1" class="form-label">Password</label>
+									<input type="password" class="form-control"
+										id="exampleInputPassword1" name="password">
+								</div>
+									<div class="mb-3">
+										<label for="disabledSelect" class="form-label"> </label> <select
+											id="disabledSelect" class="form-select" name="usertype">
+											<option>User Type</option>
+											<option>USER</option>
+										</select>
+									</div>
+							
+							<button type="submit" class="btn btn-dark" style="background: linear-gradient(135deg, #71b7e6, #9b59b6);">Add User</button>
+							
+						</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+		crossorigin="anonymous"></script>
+</body>
 </html>

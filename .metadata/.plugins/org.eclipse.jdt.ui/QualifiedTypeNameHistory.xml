@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="jakarta.persistence.GenerationType"/>
+<fullyQualifiedTypeName name="org.springframework.ui.Model"/>
+<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+<fullyQualifiedTypeName name="jakarta.persistence.Table"/>
+<fullyQualifiedTypeName name="jakarta.persistence.Id"/>
+<fullyQualifiedTypeName name="com.akshay.org.springframework.boot.model.Model"/>
+<fullyQualifiedTypeName name="org.springframework.data.jpa.repository.JpaRepository"/>
+<fullyQualifiedTypeName name="com.akshay.kochiProject.Repository.VenderRepository"/>
+<fullyQualifiedTypeName name="java.awt.PageAttributes.MediaType"/>
+<fullyQualifiedTypeName name="java.util.Map"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="com.akshay.org.springframework.boots.Model.Model"/>
+<fullyQualifiedTypeName name="com.akshay.kochiProject.Model.Address"/>
+<fullyQualifiedTypeName name="java.util.Set"/>
+<fullyQualifiedTypeName name="javax.persistence.CascadeType"/>
+<fullyQualifiedTypeName name="com.akshay.GroceryMarket.Model.Address"/>
+<fullyQualifiedTypeName name="com.akshay.GroceryMarket.Model.Item"/>
+<fullyQualifiedTypeName name="javax.persistence.Entity"/>
+<fullyQualifiedTypeName name="javax.persistence.Table"/>
+<fullyQualifiedTypeName name="javax.persistence.Id"/>
+<fullyQualifiedTypeName name="com.akshay.GroceryMarket.Model.User"/>
+<fullyQualifiedTypeName name="com.akshay.kochiProject.Model.User"/>
+<fullyQualifiedTypeName name="com.akshay.Koottam.Model.Address"/>
+<fullyQualifiedTypeName name="java.util.Optional"/>
+</qualifiedTypeNameHistroy>

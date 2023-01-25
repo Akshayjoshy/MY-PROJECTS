@@ -63,14 +63,18 @@ body{
 	                          
 						&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;	<label for="vendorPassword" class="form-label">Vendor Password</label>
 	                     &emsp;&emsp;     <input type="password" id="vendorPassword" name="vendorPassword" class="form-control" placeholder="Enter the Vendor Password"><br><br>
-	                      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;     <label class="form-label">Select Vendor Category</label>   
-	                                        
-								<input type="text" name="vendorCategoryName" placeholder="Enter the Vendor Catogory Name"><br><br>
+	                      
 	                       
 						&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;		<label class="form-label">Select Vendor UserType</label>
 	                            <select name="vendorUserType">
 	                                <option>INDIVIDUAL</option> 
 									<option>ORGANISATION</option> 
+	                            </select><br><br>
+	                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;     <label class="form-label">Select Vendor Category</label>   
+	                                        
+								<select name="vendorCategory">
+	                                <option>FRUIT</option> 
+									<option>VEGITABLE</option> 
 	                            </select><br><br>
 	                       
 	                       <center><button type="submit">Add Vendor</button></center>

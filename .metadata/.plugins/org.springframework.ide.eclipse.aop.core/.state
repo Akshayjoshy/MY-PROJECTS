@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="org.springframework.boots"/>
+<aop-project name="luminar"/>
+<aop-project name="Farmer"/>
+<aop-project name="kochiProject"/>
+<aop-project name="Koottam"/>
+<aop-project name="GroceryMarket"/>
+</aop-reference-model>

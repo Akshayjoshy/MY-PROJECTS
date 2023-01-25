@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Koottam/src/main/webapp/WEB-INF/jsp/BackOffice.jsp&apos; to &apos;BackOfficeHome.jsp&apos;" description="Rename resource &apos;BackOffice.jsp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/webapp/WEB-INF/jsp/BackOffice.jsp" name="BackOfficeHome.jsp" stamp="1673449353975" updateReferences="true"/>
+</session>
